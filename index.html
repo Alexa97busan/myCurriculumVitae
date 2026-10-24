@@ -821,6 +821,17 @@ sections.push(
   ['블루핸즈 자동차 검사원', '동울산정비', '울산 동구 (2시간 초과 가능)', '경력무관, 정규직, 월 243만원', '11/20', [S(55091212)]]
  ]}
 );
+const TM = id => ['테슬라 공식', 'https://hire-r1.mokahr.com/social-recruitment/tesla/100004099#/job/' + id];
+sections.push(
+ { title: '9. 테슬라 (공식 채용 포털 + 테슬라 공인 바디샵) — 부산·경남 위주', rows: [
+  ['Vehicle Operator (ADAS·안전기능 검증 시험 주행)', '테슬라 (Tesla)', '부산 (근무지 상세는 원문 확인)', '운전경력 3년 이상, 영어 의사소통 필수, 주야간 교대 가능. ADAS 희망과 가장 가까움', '원문 확인', [TM('c1e1b72d-2407-46c0-a1b8-1b455a6427f6')]],
+  ['Service – Vehicle Technician (정비기술자)', '테슬라 (Tesla)', '창원 (약 104분, 빠듯함)', '자동차 기술 업무 2년 이상. 정비산업기사 우대 → 자격 취득 후 도전', '원문 확인', [TM('c87f6acc-f979-48f4-88b9-35cb71f4b9da')]],
+  ['Service – Service Advisor', '테슬라 (Tesla)', '창원 (약 104분, 빠듯함)', '자동차 산업 고객상담 등 2년 이상 경력 필요. 현재는 조건 미충족', '원문 확인', [TM('9451f1c5-face-4d90-a98b-676914c8eb45')]],
+  ['[Tesla Korea] 대규모 채용', '테슬라코리아(유)', '서울 강남 (지역 밖)', '경력무관(신입 포함), 정규직, 홈페이지 지원. 직무별 상세는 원문 확인', '10/31', [S(55289878)]],
+  ['테슬라 바디샵 부품 파트실 신입 직원', '(주)성진정비 서김해지점', '김해 (약 64분)', '신입, 정규직', '11/20', [S(55353391)]],
+  ['테슬라 공인바디샵 판금부 직원', '(주)성진정비 서김해지점', '김해 (약 64분)', '경력 1년 이상, 정규직', '11/01', [S(55186283)]]
+ ]}
+);
 const root = document.getElementById('jobs-root');
 sections.forEach(function(sec){
   var h = document.createElement('h4'); h.textContent = sec.title; root.appendChild(h);

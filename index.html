@@ -272,6 +272,8 @@
   a.bloglink::after { content:"블로그 글 ↗"; position:absolute; right:8px; bottom:8px; background:rgba(10,102,194,.92); color:#fff; font-size:12px; font-weight:700; padding:3px 9px; border-radius:12px; pointer-events:none; }
   .lang-div a.bloglink::after { content:"Blog post ↗"; }
   @media print { a.bloglink::after { display:none; } }
+    a.sitelink::after { content:"사이트 열기 ↗"; }
+  .lang-div a.sitelink::after { content:"Open site ↗"; }
   /* ---------- inline photos ---------- */
   .mid-photos { display:grid; gap:12px; margin:16px 0 6px; grid-template-columns:repeat(2,1fr); break-inside:avoid; }
   .mid-photos.n3 { grid-template-columns:repeat(3,1fr); }
@@ -489,7 +491,7 @@
     <li><b>물리 시스템 시뮬레이션</b>: 엔진 구동 원리와 전기 회로도를 시각화한 인터랙티브 시뮬레이터 12종 구현</li>
     <li><b>데이터베이스 자산화</b>: 자동차진단평가사 2급 2019~2026년 기출 900문항을 실제 시험과 같은 방식으로 구성</li>
   </ul>
-  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/2025caraptest0901</span></div><img src="images/3cc8ad11ad.jpg" alt="CarLab 메인 화면 (실제 사이트 캡처)"></figure>
+  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/2025caraptest0901</span></div><a class="bloglink sitelink" href="https://alexa97busan.github.io/2025caraptest0901/" target="_blank" rel="noopener"><img src="images/3cc8ad11ad.jpg" alt="CarLab 메인 화면 (실제 사이트 캡처)"></a></figure>
 <div class="mid-photos n1"><figure><img src="images/engine-exploded-diagram.jpg" alt="엔진 분해도" loading="lazy"><figcaption>직접 만든 엔진 분해도 (구성 부품 한글·영문 표기)</figcaption></figure></div>
   <div class="result"><b>의미·결과</b> 복잡한 기계 시스템을 코드로 구현해 이해하는 힘을 보여준 작업입니다. 이 사이트로 학습해 진단평가사 2급에 합격했습니다.</div>
 </div>
@@ -498,7 +500,7 @@
   <h3>정비 기출 노트 — 자동차정비산업기사 과정평가형 학습 사이트</h3>
   <div class="meta"><a href="https://alexa97busan.github.io/GreenAicarmechanic1020/">alexa97busan.github.io/GreenAicarmechanic1020</a></div>
   <p>과정평가형 주관식·객관식 380문항과 도표·이미지 자료를 디지털로 자산화한 자체 제작 학습 플랫폼입니다(바이브 코딩으로 제작).</p>
-  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/GreenAicarmechanic1020</span></div><img src="images/f0d639931f.jpg" alt="정비 기출 노트 메인 화면 (실제 사이트 캡처)"></figure>
+  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/GreenAicarmechanic1020</span></div><a class="bloglink sitelink" href="https://alexa97busan.github.io/GreenAicarmechanic1020/" target="_blank" rel="noopener"><img src="images/f0d639931f.jpg" alt="정비 기출 노트 메인 화면 (실제 사이트 캡처)"></a></figure>
   <div class="result"><b>의미·결과</b> 기출문제와 핵심 이론을 한곳에 모아 학습 과정을 효율화했습니다.</div>
 </div>
 
@@ -506,7 +508,7 @@
   <h3>DR-9180 Diagnostic Console — 올인원 자동차 진단 웹 애플리케이션</h3>
   <div class="meta"><a href="https://genai-app-dr-9100diagnosticconsole-1-178627094570-703848041581.us-central1.run.app">DR-9180 진단 콘솔 열기</a></div>
   <p>레트로 하드웨어 감성을 적용했고, 차량 제원 조회, 상태 진단, 수리비 산출, 차량 비교 및 데이터 분석(5채널 시스템) 기능을 갖췄습니다.</p>
-  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>DR-9180 Diagnostic Console (Cloud Run)</span></div><img src="images/743ec1df1f.jpg" alt="DR-9180 진단 콘솔 화면 (실제 사이트 캡처)"></figure>
+  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>DR-9180 Diagnostic Console (Cloud Run)</span></div><a class="bloglink sitelink" href="https://genai-app-dr-9100diagnosticconsole-1-178627094570-703848041581.us-central1.run.app" target="_blank" rel="noopener"><img src="images/743ec1df1f.jpg" alt="DR-9180 진단 콘솔 화면 (실제 사이트 캡처)"></a></figure>
   <div class="result"><b>의미·결과</b> 진단평가사 2급 지식을 바탕으로 흩어진 정비 데이터를 하나의 흐름으로 묶는 도구를 AI와 함께 직접 만들었습니다.</div>
 </div>
 
@@ -710,7 +712,7 @@
     <li><b>Physical system simulation</b>: 12 interactive simulators visualising how an engine runs and how electrical circuits work</li>
     <li><b>Data asset</b>: <b class="stat">900 past exam questions</b> (2019–2026) for the Level 2 appraiser exam, set up in the same format as the real test</li>
   </ul>
-  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/2025caraptest0901</span></div><img src="images/3cc8ad11ad.jpg" alt="CarLab main screen (live capture)"></figure>
+  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/2025caraptest0901</span></div><a class="bloglink sitelink" href="https://alexa97busan.github.io/2025caraptest0901/" target="_blank" rel="noopener"><img src="images/3cc8ad11ad.jpg" alt="CarLab main screen (live capture)"></a></figure>
 <div class="mid-photos n1"><figure><img src="images/engine-exploded-diagram.jpg" alt="Engine exploded diagram" loading="lazy"><figcaption>An engine exploded diagram I made (parts labelled in Korean and English)</figcaption></figure></div>
   <div class="result"><b>What it means</b> This shows my ability to understand complex mechanical systems by implementing them in code. I studied with this site and passed the Level 2 appraiser exam.</div>
 </div>
@@ -719,7 +721,7 @@
   <h3>Maintenance Exam Notes — a study site for the course-based maintenance qualification</h3>
   <div class="meta"><a href="https://alexa97busan.github.io/GreenAicarmechanic1020/">alexa97busan.github.io/GreenAicarmechanic1020</a></div>
   <p>A self-built study platform that turns 380 short-answer and multiple-choice questions, together with diagrams and images, into a digital asset (built with vibe coding).</p>
-  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/GreenAicarmechanic1020</span></div><img src="images/f0d639931f.jpg" alt="Maintenance Exam Notes home screen (live capture)"></figure>
+  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/GreenAicarmechanic1020</span></div><a class="bloglink sitelink" href="https://alexa97busan.github.io/GreenAicarmechanic1020/" target="_blank" rel="noopener"><img src="images/f0d639931f.jpg" alt="Maintenance Exam Notes home screen (live capture)"></a></figure>
   <div class="result"><b>What it means</b> Bringing past questions and core theory into one place made the study process more efficient.</div>
 </div>
 
@@ -727,7 +729,7 @@
   <h3>DR-9180 Diagnostic Console — an all-in-one automotive diagnostics web app</h3>
   <div class="meta"><a href="https://genai-app-dr-9100diagnosticconsole-1-178627094570-703848041581.us-central1.run.app">Open the DR-9180 Diagnostic Console</a></div>
   <p>It has a retro hardware aesthetic and combines vehicle specification lookup, condition diagnosis, repair-cost estimates, vehicle comparison and data analysis (a five-channel system).</p>
-  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>DR-9180 Diagnostic Console (Cloud Run)</span></div><img src="images/743ec1df1f.jpg" alt="DR-9180 console screen (live capture)"></figure>
+  <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>DR-9180 Diagnostic Console (Cloud Run)</span></div><a class="bloglink sitelink" href="https://genai-app-dr-9100diagnosticconsole-1-178627094570-703848041581.us-central1.run.app" target="_blank" rel="noopener"><img src="images/743ec1df1f.jpg" alt="DR-9180 console screen (live capture)"></a></figure>
   <div class="result"><b>What it means</b> Using my Level 2 appraiser knowledge, I built a tool with AI that pulls scattered maintenance data into a single flow.</div>
 </div>
 

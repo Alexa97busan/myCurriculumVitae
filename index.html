@@ -263,7 +263,9 @@
     .item, .tools, .glance3 { break-inside:avoid; }
     section { margin-top:14px; }
   }
-    /* ---------- inline photos ---------- */
+      .gallery figure.small img { width:50%; height:auto; margin:0 auto; }
+  @media print { .gallery figure.small img { height:auto; } }
+  /* ---------- inline photos ---------- */
   .mid-photos { display:grid; gap:12px; margin:16px 0 6px; grid-template-columns:repeat(2,1fr); break-inside:avoid; }
   .mid-photos.n3 { grid-template-columns:repeat(3,1fr); }
   .mid-photos.n1 { grid-template-columns:1fr; }
@@ -376,7 +378,7 @@
   <figure><img src="images/3c937ea03e.jpg" alt="포토샵 작업 중인 모습"><figcaption>포토샵 작업 중인 모습</figcaption></figure>
 
   <figure><img src="images/1836b8ba55.jpg" alt="벡스코 현장 근무 중"><figcaption>벡스코 현장 근무 중</figcaption></figure>
-  <figure><img src="images/face-2022.jpg" alt="2022년의 나" loading="lazy"><figcaption>2022년</figcaption></figure>
+  <figure class="small"><img src="images/face-2022.jpg" alt="2022년의 나" loading="lazy"><figcaption>2022년</figcaption></figure>
   <figure><img src="images/book-industrial-engineer.jpg" alt="정비 이론 공부" loading="lazy"><figcaption>정비 이론 공부 중</figcaption></figure>
 </div>
 </section>

@@ -263,7 +263,27 @@
     .item, .tools, .glance3 { break-inside:avoid; }
     section { margin-top:14px; }
   }
-  /* ---------- top category tabs ---------- */
+    /* ---------- inline photos ---------- */
+  .mid-photos { display:grid; gap:12px; margin:16px 0 6px; grid-template-columns:repeat(2,1fr); break-inside:avoid; }
+  .mid-photos.n3 { grid-template-columns:repeat(3,1fr); }
+  .mid-photos.n1 { grid-template-columns:1fr; }
+  .mid-photos figure { margin:0; break-inside:avoid; }
+  .mid-photos img { width:100%; display:block; border-radius:6px; border:1px solid var(--line); object-fit:cover; height:210px; }
+  .mid-photos.n3 img { height:170px; }
+  .mid-photos.tall img { height:400px; object-position:50% 28%; }
+  .mid-photos.n1 img { height:auto; max-height:560px; object-fit:contain; background:#fff; }
+  .mid-photos.logos { grid-template-columns:repeat(2,1fr); max-width:520px; margin-left:auto; margin-right:auto; }
+  .mid-photos.logos img { height:130px; object-fit:contain; background:#fff; }
+  .mid-photos figcaption { font-size:12.5px; color:var(--sub); margin-top:4px; text-align:center; }
+  @media (max-width:700px) { .mid-photos.n3 { grid-template-columns:1fr 1fr; } .mid-photos.tall img { height:300px; } }
+  @media print {
+    .mid-photos { gap:8px; margin:8px 0 2px; }
+    .mid-photos img { height:42mm; } .mid-photos.n3 img { height:36mm; } .mid-photos.tall img { height:72mm; }
+    .mid-photos.n1 img { height:auto; max-height:100mm; } .mid-photos.logos img { height:26mm; }
+    .mid-photos figcaption { font-size:8.2pt; margin-top:2px; }
+  }
+
+/* ---------- top category tabs ---------- */
   .tabs { max-width:900px; margin:14px auto 0; padding:0 14px; display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:0; z-index:40; }
   .tabs a { flex:none; padding:9px 18px; border-radius:24px; background:var(--card); color:var(--ink); border:1px solid var(--line);
             font-size:14px; font-weight:700; text-decoration:none; box-shadow:0 1px 3px rgba(16,24,40,.08); }
@@ -314,12 +334,14 @@
 <h3 class="sub"><span class="num">4</span>기계와 논리를 다루는 힘: 자가 정비와 진단 솔루션 개발</h3>
 <p>일 밖에서는 늘 직접 기계를 만졌습니다. 내 차(SM7)의 기본 점검과 소모품 관리를 직접 하고, PC는 부품을 구해 직접 조립합니다. 기계를 뜯어 구동 원리를 두 눈으로 확인하는 편이 설명을 듣는 것보다 언제나 빨랐습니다.</p>
 <p>이 관심은 자연스럽게 직업의 방향이 되었습니다. 올해 자동차진단평가사 2급을 취득했고, 2027년 2월 자동차정비산업기사(과정평가형) 취득을 목표로 현재 1,200시간의 전문 과정을 이수 중입니다. 구동·섀시 계통부터 가솔린·디젤 전자제어, 차량 네트워크 통신, 전기차 특화시스템과 고전압 배터리까지 깊이 있게 파고들고 있습니다.</p>
+<div class="mid-photos tall"><figure><img src="images/me-engine-2.jpg" alt="엔진 분해 실습 중인 모습" loading="lazy"><figcaption>엔진 분해 실습 중</figcaption></figure><figure><img src="images/me-engine-3.jpg" alt="실습장에서 엔진과 함께" loading="lazy"><figcaption>실습장에서 엔진 앞에서</figcaption></figure></div>
 <p>단순히 배우는 것으로 부족해, AI와 협업하여 3가지 진단 및 학습 솔루션을 직접 만들었습니다.</p>
 <div class="tools"><div class="tool t1"><div class="tt">기출 CBT</div><div class="td">자동차진단평가사 2급 기출 <b>900문항</b>(2019~2026)을 실제 시험 방식으로 구성</div></div><div class="tool t2"><div class="tt">CarLab</div><div class="td">엔진 구동 원리와 전기회로를 보여주는 <b>시뮬레이터 12종</b>을 결합</div></div><div class="tool t3"><div class="tt">DR-9180</div><div class="td">제원 조회·상태 진단·수리비 산출·차량 비교를 <b>한 화면</b>에서 처리</div></div></div>
 <blockquote class="pull">특히 DR-9180은 차량의 상태를 항목별로 확인하고 결과를 화면에 남기는 구조로 설계했습니다. ‘판정에는 근거가 따라붙어야 하고, 그 근거는 기록으로 남아야 한다’는 생각은 도구 설계에도 그대로 들어갔습니다.</blockquote>
 <h3 class="sub"><span class="num">5</span>현장 투입 준비 완료: 차량 진단·평가 및 기술의 최전선으로</h3>
 <p>지금 가장 먼저 가고 싶은 곳은 차량 진단·평가 현장입니다. 자동차진단평가사 자격은 그 방향을 향한 첫걸음이었고, 현재의 정비 과정은 판정의 기술적 근거를 단단하게 채우는 단계입니다. 차량을 확인해 결론을 내리고, 그 결론을 고객이 완벽히 이해할 수 있게 전달하는 일. 이 과정은 제가 은행 창구에서 고객의 말을 증상으로 바꿔 듣던 3년 2개월의 시간과 크게 다르지 않습니다.</p>
 <p>ADAS 테스트와 서비스센터 테크니션 역시 같은 축 위의 다른 지점입니다. 시험 조건을 지키고 결과를 정확히 기록해 온 경험이 있고, 증상을 원인까지 좁히는 논리적 사고는 지금 훈련에서 탄탄하게 다지고 있습니다. 차와 컴퓨터를 함께 다루는 일이라면 부산, 김해, 창원, 경주 어디든 바로 출퇴근하며 성과를 낼 준비가 되어 있습니다.</p>
+<div class="mid-photos n1"><figure><img src="images/me-appraiser-mechanic.jpg" alt="진단평가사 그리고 정비사 그리고 나" loading="lazy"><figcaption>진단평가사 그리고 정비사 그리고 나</figcaption></figure></div>
 </section>
 <section class="f1">
 <h2>Renault F1 Team</h2>
@@ -330,7 +352,9 @@
   <figure class="f1pit2"><img src="images/7d33ed2893.jpg" alt="Pit crew changing tyres"><figcaption>타이어를 교체하는 정비팀</figcaption></figure>
   <figure class="f1yel"><img src="images/a73b07d85a.jpg" alt="Yellow team on the grid"><figcaption>그리드 위의 노란색 팀</figcaption></figure>
   <figure class="f1wide f1drv"><img src="images/43955d61a4.jpg" alt="F1 driver"><figcaption>경기를 마치고 팬에게 인사하는 선수</figcaption></figure>
+
 </div>
+<div class="mid-photos logos"><figure><img src="images/f1-renault-logo.jpg" alt="Williams Renault F1 스티커" loading="lazy"><figcaption>Williams Renault F1</figcaption></figure><figure><img src="images/renault-alpine-emblem.jpg" alt="Alpine 엠블럼" loading="lazy"><figcaption>Alpine</figcaption></figure></div>
 </section>
 <section class="photos">
 <h2>활동 사진</h2>
@@ -338,7 +362,10 @@
   <figure><img src="images/f79e93030b.jpg" alt="자동차 정비 중인 모습"><figcaption>자동차 정비 중인 모습</figcaption></figure>
   <figure><img src="images/f466f40505.jpg" alt="자동차 진단기 작동 중"><figcaption>자동차 진단기 작동 중</figcaption></figure>
   <figure><img src="images/3c937ea03e.jpg" alt="포토샵 작업 중인 모습"><figcaption>포토샵 작업 중인 모습</figcaption></figure>
+
   <figure><img src="images/1836b8ba55.jpg" alt="벡스코 현장 근무 중"><figcaption>벡스코 현장 근무 중</figcaption></figure>
+  <figure><img src="images/face-2022.jpg" alt="2022년의 나" loading="lazy"><figcaption>2022년</figcaption></figure>
+  <figure><img src="images/book-industrial-engineer.jpg" alt="정비 이론 공부" loading="lazy"><figcaption>정비 이론 공부 중</figcaption></figure>
 </div>
 </section>
 
@@ -397,6 +424,7 @@
   <h3>그린자동차직업전문학교 — 자동차정비산업기사 (자동차정비)</h3>
   <div class="meta">2026.07 ~ 2027.02(예정) <span class="now">진행 중</span> · 과정평가형 약 <b class="stat">1,200시간</b> · 평일 9:00~17:30</div>
   <p>현장 즉시 투입을 위한 실무 중심의 자동차 정비 및 시스템 제어 훈련 과정입니다. 자동변속기, 현가·조향·제동, 전자제어, 배출가스, 냉난방·편의장치, 네트워크 통신, 전기·전자회로, 전기자동차·고전압 장치를 이수 중입니다.</p>
+<div class="mid-photos n3"><figure><img src="images/engine-qr25de-1.jpg" alt="QR25DE 엔진 실습" loading="lazy"><figcaption>QR25DE 엔진 실습</figcaption></figure><figure><img src="images/engine-qr25de-2.jpg" alt="크랭크샤프트 실습" loading="lazy"><figcaption>크랭크샤프트와 실린더 블록</figcaption></figure><figure><img src="images/engine-disassembled.jpg" alt="분해한 엔진 부품" loading="lazy"><figcaption>분해한 엔진 부품 정리</figcaption></figure></div>
   <span class="tag">자동차 정비</span><span class="tag">고장 진단 및 시스템 분석</span><span class="tag">차량 진단 평가</span><span class="tag">전기전자 회로 분석</span><span class="tag">주도적 문제 해결</span>
   <div class="result"><b>의미·결과</b> 내연기관·섀시·전기전자 회로의 고장 진단과 수리 역량을 키우는 중입니다. 학습 기간에 정비 데이터베이스와 시뮬레이터를 결합한 자체 웹앱(DR-9180, CarLab)을 만들었고, 2026년 10월 자동차진단평가사 2급 실기에 합격했습니다.</div>
 </div>
@@ -424,7 +452,9 @@
   <dt>2023</dt><dd><b>운전면허 2종 보통</b> · 자차 운행 1년 4개월 무사고</dd>
   <dt>2021.12</dt><dd><b>Google 애널리틱스 Individual Qualification (GAIQ)</b> — Google (만료 2022.12)</dd>
   <dt>—</dt><dd><b>경비이수증</b></dd>
+
 </dl>
+<div class="mid-photos "><figure><img src="images/book-appraiser-practical.jpg" alt="자동차진단평가사 실기편" loading="lazy"><figcaption>자동차진단평가사 2급 실기편</figcaption></figure><figure><img src="images/book-appraiser-written.jpg" alt="자동차진단평가사 필기편" loading="lazy"><figcaption>자동차진단평가사 2급 필기편</figcaption></figure></div>
 </section>
 
 <section>
@@ -439,6 +469,7 @@
     <li><b>데이터베이스 자산화</b>: 자동차진단평가사 2급 2019~2026년 기출 900문항을 실제 시험과 같은 방식으로 구성</li>
   </ul>
   <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/2025caraptest0901</span></div><img src="images/3cc8ad11ad.jpg" alt="CarLab 메인 화면 (실제 사이트 캡처)"></figure>
+<div class="mid-photos n1"><figure><img src="images/engine-exploded-diagram.jpg" alt="엔진 분해도" loading="lazy"><figcaption>직접 만든 엔진 분해도 (구성 부품 한글·영문 표기)</figcaption></figure></div>
   <div class="result"><b>의미·결과</b> 복잡한 기계 시스템을 코드로 구현해 이해하는 힘을 보여준 작업입니다. 이 사이트로 학습해 진단평가사 2급에 합격했습니다.</div>
 </div>
 
@@ -530,12 +561,14 @@
 <h3 class="sub"><span class="num">4</span>Mechanical Aptitude &amp; Logic: DIY Maintenance and AI Diagnostic Solutions</h3>
 <p>Outside of work, I have always been hands-on with machines. I perform basic maintenance and manage consumables for my own car (SM7), and I source parts to build PCs myself. Seeing the mechanical principles with my own eyes by taking things apart has always been faster for me than just listening to explanations.</p>
 <p>This interest naturally became my career direction. I earned the Level 2 Vehicle Diagnostic Evaluator certification this year, and I am currently completing a <b class="stat">1,200-hour</b> specialized course with the goal of acquiring the Automotive Maintenance Industrial Engineer certification by February 2027. I am diving deep into drivetrains, chassis systems, gasoline/diesel electronic controls, vehicle network communications, EV-specific systems, and high-voltage batteries.</p>
+<div class="mid-photos tall"><figure><img src="images/me-engine-2.jpg" alt="Disassembling an engine in training" loading="lazy"><figcaption>Engine disassembly practice</figcaption></figure><figure><img src="images/me-engine-3.jpg" alt="In the training workshop with an engine" loading="lazy"><figcaption>In the training workshop</figcaption></figure></div>
 <p>Simply learning wasn't enough, so I collaborated with AI to develop three diagnostic and learning tools myself:</p>
 <div class="tools"><div class="tool t1"><div class="tt">Exam CBT</div><div class="td">A CBT system with <b>900 past exam questions</b> (2019–2026) for the Level 2 Vehicle Diagnostic Evaluator</div></div><div class="tool t2"><div class="tt">CarLab</div><div class="td">Combines <b>12 simulators</b> demonstrating engine principles and electrical circuits</div></div><div class="tool t3"><div class="tt">DR-9180</div><div class="td">Spec lookups, diagnostics, repair estimates and comparisons on <b>a single screen</b></div></div></div>
 <blockquote class="pull">In particular, I designed DR-9180 to check the vehicle's status by category and log the results on the screen. The principle that “every judgment must be backed by evidence, and that evidence must remain as a record” was directly embedded into the design of this tool.</blockquote>
 <h3 class="sub"><span class="num">5</span>Ready for the Field: Heading to the Frontlines of Vehicle Diagnostics &amp; Technology</h3>
 <p>The place I want to be first is the vehicle diagnostics and evaluation field. The Vehicle Diagnostic Evaluator certification was my first step in that direction, and my current maintenance training is the phase of solidly building the technical foundation for those judgments. Identifying the issue, reaching a conclusion, and communicating that conclusion so the customer can fully understand it—this process is no different from the 38 months I spent at the bank translating customer words into actionable symptoms.</p>
 <p>ADAS testing and service center technician roles are on the same axis. I have experience strictly following test conditions and accurately recording results, and my logical thinking—narrowing down symptoms to the root cause—is being sharpened through my current <b class="stat">1,200-hour</b> training. If it's a role that bridges cars, computers, and people, I am fully prepared to commute anywhere across Busan, Gimhae, Changwon, or Gyeongju, and deliver immediate results.</p>
+<div class="mid-photos n1"><figure><img src="images/me-appraiser-mechanic.jpg" alt="Vehicle appraiser, mechanic and me" loading="lazy"><figcaption>Vehicle appraiser, mechanic, and me</figcaption></figure></div>
 </section>
 <section class="f1">
 <h2>Renault F1 Team</h2>
@@ -613,6 +646,7 @@
   <h3>Green Motor Vocational College — Industrial Engineer, Motor Vehicle Maintenance</h3>
   <div class="meta">Jul 2026 – Feb 2027 (expected) <span class="now">In progress</span> · course-based programme, approx. 1,200 hours · weekdays 9:00–17:30</div>
   <p>A practice-oriented programme in automotive maintenance and system control, designed for immediate on-the-job work. I am currently studying automatic transmissions, suspension, steering and brakes, electronic control, emissions, HVAC and comfort systems, in-vehicle networks, electrical and electronic circuits, and EV and high-voltage systems.</p>
+<div class="mid-photos n3"><figure><img src="images/engine-qr25de-1.jpg" alt="QR25DE engine practice" loading="lazy"><figcaption>QR25DE engine practice</figcaption></figure><figure><img src="images/engine-qr25de-2.jpg" alt="Crankshaft and cylinder block" loading="lazy"><figcaption>Crankshaft and cylinder block</figcaption></figure><figure><img src="images/engine-disassembled.jpg" alt="Disassembled engine parts" loading="lazy"><figcaption>Disassembled engine parts</figcaption></figure></div>
   <span class="tag">Automotive maintenance</span><span class="tag">Fault diagnosis &amp; system analysis</span><span class="tag">Vehicle diagnosis and appraisal</span><span class="tag">Electrical circuit analysis</span><span class="tag">Initiative in problem solving</span>
   <div class="result"><b>What it means</b> I am building the ability to diagnose and repair faults in combustion engines, chassis and electronic circuits. During the programme I built my own web apps combining maintenance data with simulators (DR-9180, CarLab), and in October 2026 I passed the practical exam for the Level 2 Vehicle Diagnosis Appraiser certification.</div>
 </div>
@@ -641,6 +675,7 @@
   <dt>Dec 2021</dt><dd><b>Google Analytics Individual Qualification (GAIQ)</b> — Google (expired Dec 2022)</dd>
   <dt>—</dt><dd><b>Security guard training certificate</b></dd>
 </dl>
+<div class="mid-photos "><figure><img src="images/book-appraiser-practical.jpg" alt="Vehicle Diagnosis Appraiser practical textbook" loading="lazy"><figcaption>Level 2 Appraiser: practical exam book</figcaption></figure><figure><img src="images/book-appraiser-written.jpg" alt="Vehicle Diagnosis Appraiser written textbook" loading="lazy"><figcaption>Level 2 Appraiser: written exam book</figcaption></figure></div>
 </section>
 
 <section>
@@ -655,6 +690,7 @@
     <li><b>Data asset</b>: <b class="stat">900 past exam questions</b> (2019–2026) for the Level 2 appraiser exam, set up in the same format as the real test</li>
   </ul>
   <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>alexa97busan.github.io/2025caraptest0901</span></div><img src="images/3cc8ad11ad.jpg" alt="CarLab main screen (live capture)"></figure>
+<div class="mid-photos n1"><figure><img src="images/engine-exploded-diagram.jpg" alt="Engine exploded diagram" loading="lazy"><figcaption>An engine exploded diagram I made (parts labelled in Korean and English)</figcaption></figure></div>
   <div class="result"><b>What it means</b> This shows my ability to understand complex mechanical systems by implementing them in code. I studied with this site and passed the Level 2 appraiser exam.</div>
 </div>
 

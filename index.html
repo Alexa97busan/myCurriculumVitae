@@ -263,10 +263,23 @@
     .item, .tools, .glance3 { break-inside:avoid; }
     section { margin-top:14px; }
   }
+  /* ---------- top category tabs ---------- */
+  .tabs { max-width:900px; margin:14px auto 0; padding:0 14px; display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:0; z-index:40; }
+  .tabs a { flex:none; padding:9px 18px; border-radius:24px; background:var(--card); color:var(--ink); border:1px solid var(--line);
+            font-size:14px; font-weight:700; text-decoration:none; box-shadow:0 1px 3px rgba(16,24,40,.08); }
+  .tabs a.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  @media (max-width:700px) { .tabs { margin-top:58px; position:static; } }
+  @media print { .tabs { display:none !important; } }
+  @media screen {
+    body[data-tab="ko"] .pane-en, body[data-tab="ko"] .pane-jobs,
+    body[data-tab="en"] .pane-ko, body[data-tab="en"] .pane-jobs,
+    body[data-tab="jobs"] .pane-ko, body[data-tab="jobs"] .pane-en { display:none; }
+  }
 </style>
 </head>
 <body>
 <a class="dl-btn" href="Seungwon_Jeong_Resume.pdf" download>PDF 다운로드 ⬇</a>
+<nav class="tabs" id="tabs"><a href="#ko" data-tab="ko">한글 이력서</a><a href="#en" data-tab="en">영문 이력서</a><a href="#jobs" data-tab="jobs">채용공고</a></nav>
 <div class="page">
 <div class="hero"><img src="images/b45a4f60b2.jpg" alt="Megane R.S. and Renault F1 car"><span>Megane R.S. · Renault F1 Team</span></div>
 
@@ -881,5 +894,27 @@ sections.forEach(function(sec){
 <div class="note">기준일 2026.10 · 국문·영문 통합 최종본. 원본 이력서 01~04, 07(링크드인 통합본)과 채용 리포트 05, 지원서류 06의 내용을 대조해 가장 최신 내용을 반영했습니다.</div>
 
 </div>
+<script>
+(function(){
+  var page = document.querySelector('.page');
+  if (!page) return;
+  Array.prototype.forEach.call(page.children, function(el){
+    if (el.classList.contains('lang-div')) el.classList.add('pane-en');
+    else if (el.id === 'jobs-list') el.classList.add('pane-jobs');
+    else if (!el.classList.contains('note')) el.classList.add('pane-ko');
+  });
+  var tabs = document.querySelectorAll('#tabs a');
+  function show(t){
+    if (t !== 'en' && t !== 'jobs') t = 'ko';
+    document.body.setAttribute('data-tab', t);
+    Array.prototype.forEach.call(tabs, function(a){ a.classList.toggle('on', a.getAttribute('data-tab') === t); });
+    window.scrollTo(0, 0);
+  }
+  Array.prototype.forEach.call(tabs, function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); var t = a.getAttribute('data-tab'); try { history.replaceState(null, '', '#' + t); } catch (x) {} show(t); });
+  });
+  show((location.hash || '').replace('#', ''));
+})();
+</script>
 </body>
 </html>

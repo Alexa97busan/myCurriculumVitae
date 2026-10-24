@@ -273,7 +273,8 @@
   @media screen {
     body[data-tab="ko"] .pane-en, body[data-tab="ko"] .pane-jobs,
     body[data-tab="en"] .pane-ko, body[data-tab="en"] .pane-jobs,
-    body[data-tab="jobs"] .pane-ko, body[data-tab="jobs"] .pane-en { display:none; }
+    body[data-tab="jobs"] .pane-ko, body[data-tab="jobs"] .pane-en, body[data-tab="jobs"] .pane-hero { display:none; }
+    body[data-tab="en"] .lang-div { margin-top:0; padding-top:0; border-top:0; }
   }
 </style>
 </head>
@@ -899,7 +900,8 @@ sections.forEach(function(sec){
   var page = document.querySelector('.page');
   if (!page) return;
   Array.prototype.forEach.call(page.children, function(el){
-    if (el.classList.contains('lang-div')) el.classList.add('pane-en');
+    if (el.classList.contains('hero')) el.classList.add('pane-hero');
+    else if (el.classList.contains('lang-div')) el.classList.add('pane-en');
     else if (el.id === 'jobs-list') el.classList.add('pane-jobs');
     else if (!el.classList.contains('note')) el.classList.add('pane-ko');
   });

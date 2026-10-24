@@ -283,6 +283,18 @@
     .mid-photos figcaption { font-size:8.2pt; margin-top:2px; }
   }
 
+  /* ---------- image lightbox ---------- */
+  .page img.zoomable { cursor:zoom-in; }
+  .lb { position:fixed; inset:0; z-index:100; background:rgba(8,14,24,.92); display:none; align-items:center; justify-content:center; flex-direction:column; padding:18px 56px; }
+  .lb.open { display:flex; }
+  .lb img { max-width:100%; max-height:calc(100vh - 110px); object-fit:contain; border-radius:6px; background:#fff; box-shadow:0 8px 40px rgba(0,0,0,.5); }
+  .lb .cap { color:#e8edf3; font-size:14px; margin-top:12px; text-align:center; max-width:900px; min-height:1.4em; }
+  .lb .cnt { color:#9fb0c3; font-size:12px; margin-top:4px; }
+  .lb button { position:absolute; border:0; background:rgba(255,255,255,.14); color:#fff; cursor:pointer; border-radius:50%; width:44px; height:44px; font-size:24px; line-height:1; }
+  .lb button:hover { background:rgba(255,255,255,.28); }
+  .lb .x { top:14px; right:14px; } .lb .pv { left:8px; top:50%; margin-top:-22px; } .lb .nx { right:8px; top:50%; margin-top:-22px; }
+  @media (max-width:700px) { .lb { padding:14px 8px; } .lb .pv, .lb .nx { top:auto; bottom:14px; margin-top:0; } .lb .pv { left:14px; } .lb .nx { right:14px; } }
+  @media print { .lb { display:none !important; } .page img.zoomable { cursor:auto; } }
 /* ---------- top category tabs ---------- */
   .tabs { max-width:900px; margin:14px auto 0; padding:0 14px; display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:0; z-index:40; }
   .tabs a { flex:none; padding:9px 18px; border-radius:24px; background:var(--card); color:var(--ink); border:1px solid var(--line);
@@ -952,6 +964,45 @@ sections.forEach(function(sec){
     a.addEventListener('click', function(e){ e.preventDefault(); var t = a.getAttribute('data-tab'); try { history.replaceState(null, '', '#' + t); } catch (x) {} show(t); });
   });
   show((location.hash || '').replace('#', ''));
+})();
+</script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <button type="button" class="x" aria-label="닫기">&times;</button>
+  <button type="button" class="pv" aria-label="이전 사진">&#8249;</button>
+  <img id="lbimg" alt="">
+  <div class="cap" id="lbcap"></div><div class="cnt" id="lbcnt"></div>
+  <button type="button" class="nx" aria-label="다음 사진">&#8250;</button>
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('lb'), im = document.getElementById('lbimg'), cap = document.getElementById('lbcap'), cnt = document.getElementById('lbcnt');
+  var list = [], idx = 0;
+  function eligible(img){ return !img.closest('header') && !img.closest('a') && !img.closest('.lb'); }
+  document.querySelectorAll('.page img').forEach(function(i){ if (eligible(i)) i.classList.add('zoomable'); });
+  function collect(){ list = Array.prototype.filter.call(document.querySelectorAll('.page img.zoomable'), function(i){ return i.offsetParent !== null; }); }
+  function show(n){
+    idx = (n + list.length) % list.length;
+    var i = list[idx], f = i.closest('figure'), c = f && f.querySelector('figcaption');
+    im.src = i.currentSrc || i.src; im.alt = i.alt || '';
+    cap.textContent = (c && c.textContent.trim()) || i.alt || '';
+    cnt.textContent = (idx + 1) + ' / ' + list.length;
+  }
+  function open(i){ collect(); var n = list.indexOf(i); if (n < 0) return; show(n); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; im.removeAttribute('src'); }
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (t.classList && t.classList.contains('zoomable')) { open(t); return; }
+    if (!lb.classList.contains('open')) return;
+    if (t.classList.contains('x') || t === lb) close();
+    else if (t.classList.contains('pv')) show(idx - 1);
+    else if (t.classList.contains('nx')) show(idx + 1);
+  });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
 })();
 </script>
 </body>

@@ -7,7 +7,7 @@
 <title>정승원 이력서 · 모바일</title>
 <style>
   :root {
-    --ink:#1b2430; --sub:#5b6675; --line:#dfe4ea; --accent:#0a66c2; --accent-dark:#0a4f96;
+    --ink:#1b2430; --sub:#4a5566; --line:#dfe4ea; --accent:#0a66c2; --accent-dark:#0a4f96;
     --bg:#eef1f4; --card:#ffffff; --tint:#eaf2fb; --result-bg:#f7f9fb; --result-line:#9bbbe0;
   }
   * { box-sizing:border-box; }
@@ -15,7 +15,7 @@
   body {
     margin:0; background:var(--bg); color:var(--ink);
     font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Segoe UI",sans-serif;
-    line-height:1.72; font-size:16.24px;
+    line-height:1.76; font-size:16.24px;
     -webkit-font-smoothing:antialiased;
   }
   .page { max-width:900px; margin:28px auto; background:var(--card); padding:52px 58px 44px; box-shadow:0 1px 3px rgba(16,24,40,.08); }
@@ -837,7 +837,7 @@
 </div>
 
 <section class="jobs-section" id="jobs-list">
-<h2>자동차 정비·진단평가 채용공고 종합 리스트 <small style="font-weight:400;color:#5b6675;font-size:13px">(2026-10-24 조사)</small></h2>
+<h2>자동차 정비·진단평가 채용공고 종합 리스트 <small style="font-weight:400;color:#4a5566;font-size:13px">(2026-10-24 조사)</small></h2>
 <style>
   .jobs-section .jobs-note { background:var(--result-bg); border-left:3px solid var(--accent); padding:10px 14px; font-size:14.56px; margin:0 0 14px; }
   .jobs-section h4 { margin:20px 0 8px; font-size:16.24px; padding-bottom:4px; border-bottom:1px solid var(--line); }
@@ -996,7 +996,7 @@ function commute(raw){
   var tollHi = Math.max.apply(null, m.map(function(x){ return x[1]; })) * 2;
   var t = lo === hi ? '약 ' + lo + '분' : '약 ' + lo + '~' + hi + '분';
   var grade = hi <= 80 ? '여유' : hi <= 110 ? '가능(정체 시 빠듯)' : '2시간 초과';
-  return '<b>' + t + '</b><br><span style="color:#5b6675">' + grade + (tollHi ? ' · 통행료 왕복 ' + tollHi.toLocaleString('ko-KR') + '원' : '') + '</span>';
+  return '<b>' + t + '</b><br><span style="color:#4a5566">' + grade + (tollHi ? ' · 통행료 왕복 ' + tollHi.toLocaleString('ko-KR') + '원' : '') + '</span>';
 }
 const root = document.getElementById('jobs-root');
 sections.forEach(function(sec){
